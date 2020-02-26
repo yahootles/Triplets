@@ -46,9 +46,31 @@ public class Triplets {
         rhymingNouns.add("doghouse");
         rhymingNouns.add("beachhouse");
         rhymingNouns.add("treehouse");
+        
+        ArrayList<String> otherNouns = new ArrayList<String>();
+        otherNouns.add("people");
+        otherNouns.add("history");
+        otherNouns.add("way");
+        otherNouns.add("art");
+        otherNouns.add("world");
+        otherNouns.add("information");
+        otherNouns.add("map");
+        otherNouns.add("family");
+        otherNouns.add("government");
+        otherNouns.add("health");
+        otherNouns.add("system");
+        otherNouns.add("computer");
+        otherNouns.add("meat");
+        otherNouns.add("law");
+        otherNouns.add("music");
+        otherNouns.add("theory");
+        otherNouns.add("Callum");
+        
+                
+        
 
         String noun;
-        String verb1, verb2;
+        String verb1, verb2, verb3;
         String rhymingNoun1, noun2, rhymingNoun3;
         int randomNum;
 
@@ -68,6 +90,11 @@ public class Triplets {
         verb2 = verbs.get(randomNum);
         verbs.remove(randomNum);
 
+        //get the second random verb from verbs array and remove it
+        randomNum = (int) (Math.random() * verbs.size());
+        verb3 = verbs.get(randomNum);
+        verbs.remove(randomNum);
+        
         //get the first rhyming noun and remove it
         randomNum = (int) (Math.random() * rhymingNouns.size());
         rhymingNoun1 = rhymingNouns.get(randomNum);
@@ -86,9 +113,14 @@ public class Triplets {
             rhymingNouns.remove(randomNum);
             System.out.println("The " + noun + " " + verb1 + " a "
                     + rhymingNoun1 + "\n" + "And then " + verb2
-                    + " it in the " + noun2);
+                    + " it in the " + noun2 + ".\nBut alas, it " + verb3 + " the whole " + rhymingNoun3);
         } else {
-
+            randomNum = (int) (Math.random() * rhymingNouns.size());
+            noun2 = otherNouns.get(randomNum);
+            rhymingNouns.remove(randomNum);
+            System.out.println("The " + noun + " " + verb1 + " a "
+                    + rhymingNoun1 + "\n" + "And then " + verb2
+                    + " it in the " + noun2 + ".\nBut alas, it " + verb3 + " the whole " + rhymingNoun3);
         }
     }
 }
